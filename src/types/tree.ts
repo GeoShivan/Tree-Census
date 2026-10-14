@@ -8,7 +8,7 @@ export type TrunkCondition = 'Sound' | 'Minor Cavity' | 'Termite Activity' | 'Su
 
 export interface TreeRecord {
   id: string; // e.g. "TIC-001"
-  tagNumber: string; // e.g. "TI-TREE-2024-001"
+  tagNumber: string; // e.g. "TI-TREE-2026-001"
   commonName: string; // e.g. "Neem / Margosa"
   tamilName: string; // e.g. "வேப்ப மரம்"
   botanicalName: string; // e.g. "Azadirachta indica"
@@ -57,5 +57,3 @@ export interface TreeFilters {
 }
 
 export type BasemapId = 'satellite' | 'hybrid' | 'osm' | 'dark' | 'light';
-
-export type MapColorMode = 'health' | 'species' | 'family' | 'dbh';

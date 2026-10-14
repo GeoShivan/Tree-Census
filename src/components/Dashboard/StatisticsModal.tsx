@@ -434,7 +434,7 @@ export const StatisticsModal: React.FC<StatisticsModalProps> = ({
 
         {/* Footer */}
         <div className="p-3 sm:p-4 border-t border-slate-800 bg-slate-950 flex items-center justify-between text-xs text-slate-400">
-          <span>Census Dataset: TI Cycles Ambattur GIS Initiative (2024-2025)</span>
+          <span>Census Dataset: TI Cycles Ambattur GIS Initiative (2026)</span>
           <button
             onClick={onClose}
             className="px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 font-semibold transition"

@@ -84,8 +84,8 @@ export const PrintReportModal: React.FC<PrintReportModalProps> = ({
             </div>
 
             <div className="text-right text-xs text-slate-600 font-mono">
-              <div className="font-bold text-slate-900">REF: TIC-AMB-ENV-2024</div>
-              <div>Date: October 2024</div>
+              <div className="font-bold text-slate-900">REF: TIC-AMB-ENV-2026</div>
+              <div>Date: March 2026</div>
               <div>Campus Area: 27.6 Hectares</div>
             </div>
           </div>

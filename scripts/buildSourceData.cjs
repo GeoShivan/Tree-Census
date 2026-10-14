@@ -297,7 +297,7 @@ rawTrees.features.forEach((feature, index) => {
     foliageDensity,
     trunkCondition,
     recommendedAction,
-    surveyDate: '2024-03-15',
+    surveyDate: '2026-03-15',
     surveyor: 'TI Cycles GIS Survey Team',
     gpsAccuracyM: 0.5,
     notes: `Easting: ${coords[0]}, Northing: ${coords[1]} (UTM 44N)`

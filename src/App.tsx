@@ -1,5 +1,5 @@
 import React, { useState, useMemo, useCallback } from 'react';
-import { TreeRecord, TreeFilters, MapColorMode } from './types/tree';
+import { TreeRecord, TreeFilters } from './types/tree';
 import { INITIAL_TREES } from './data/tiCyclesCampus';
 import { TreeMap } from './components/Map/TreeMap';
 import { FilterPanel } from './components/Sidebar/FilterPanel';
@@ -17,7 +17,6 @@ import {
 export default function App() {
   const [allTrees, setAllTrees] = useState<TreeRecord[]>(INITIAL_TREES);
   const [selectedTree, setSelectedTree] = useState<TreeRecord | null>(null);
-  const [activeColorMode, setActiveColorMode] = useState<MapColorMode>('health');
 
   // Modals state
   const [isStatsOpen, setIsStatsOpen] = useState(false);
@@ -210,8 +209,6 @@ export default function App() {
             allTrees={allTrees}
             selectedTree={selectedTree}
             onSelectTree={(tree) => setSelectedTree(tree)}
-            activeColorMode={activeColorMode}
-            onChangeColorMode={setActiveColorMode}
           />
         </main>
       </div>

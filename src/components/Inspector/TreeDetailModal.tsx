@@ -151,7 +151,7 @@ export const TreeDetailModal: React.FC<TreeDetailModalProps> = ({
               <div className="bg-slate-950 p-3 rounded-xl border border-slate-800">
                 <div className="text-[11px] text-slate-400 mb-0.5">Estimated Age</div>
                 <div className="text-lg font-bold text-amber-400 font-mono">~{tree.ageYears} yrs</div>
-                <div className="text-[10px] text-slate-500">Surveyed 2024</div>
+                <div className="text-[10px] text-slate-500">Surveyed 2026</div>
               </div>
             </div>
           </div>
@@ -278,10 +278,10 @@ export const TreeDetailModal: React.FC<TreeDetailModalProps> = ({
 
             <div className="flex items-center justify-between text-[11px] text-slate-400 pt-2 border-t border-slate-800">
               <span className="flex items-center gap-1">
-                <Calendar className="w-3 h-3" /> Survey Date: {tree.surveyDate}
+                <Calendar className="w-3 h-3 text-emerald-400" /> Survey Date: <span className="text-slate-200 font-medium">March 2026 ({tree.surveyDate})</span>
               </span>
               <span className="flex items-center gap-1">
-                <User className="w-3 h-3" /> Surveyor: {tree.surveyor}
+                <User className="w-3 h-3 text-sky-400" /> Surveyor: <span className="text-slate-200">{tree.surveyor}</span>
               </span>
             </div>
           </div>

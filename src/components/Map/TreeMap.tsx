@@ -13,13 +13,11 @@ import { fromLonLat, toLonLat } from 'ol/proj';
 import Overlay from 'ol/Overlay';
 import { ScaleLine } from 'ol/control';
 
-import { TreeRecord, MapColorMode } from '../../types/tree';
+import { TreeRecord } from '../../types/tree';
 import { CAMPUS_CENTER, DEFAULT_ZOOM, getCampusBoundaryGeoJSON } from '../../data/tiCyclesCampus';
-import { SPECIES_CATALOG } from '../../data/speciesCatalog';
 import { toApproxUTM44N } from '../../utils/geoUtils';
 import {
   Compass,
-  Palette,
   MapPin
 } from 'lucide-react';
 
@@ -28,17 +26,13 @@ interface TreeMapProps {
   allTrees: TreeRecord[];
   selectedTree: TreeRecord | null;
   onSelectTree: (tree: TreeRecord | null) => void;
-  activeColorMode: MapColorMode;
-  onChangeColorMode: (mode: MapColorMode) => void;
 }
 
 export const TreeMap: React.FC<TreeMapProps> = ({
   trees,
   allTrees,
   selectedTree,
-  onSelectTree,
-  activeColorMode,
-  onChangeColorMode
+  onSelectTree
 }) => {
   const mapContainerRef = useRef<HTMLDivElement>(null);
   const mapInstanceRef = useRef<Map | null>(null);
@@ -114,40 +108,17 @@ export const TreeMap: React.FC<TreeMapProps> = ({
         // Uniform marker symbology size for all trees
         const radius = 6.5;
 
-        // Color coding
+        // Color coding by tree health condition
         let fillColor = '#10b981';
-        if (activeColorMode === 'health') {
-          switch (tree.health) {
-            case 'Healthy': fillColor = '#10b981'; break;
-            case 'Good': fillColor = '#3b82f6'; break;
-            case 'Fair': fillColor = '#eab308'; break;
-            case 'Stressed': fillColor = '#f97316'; break;
-            case 'Diseased': fillColor = '#ef4444'; break;
-            case 'Pruned': fillColor = '#a855f7'; break;
-            case 'Critical': fillColor = '#dc2626'; break;
-          }
-        } else if (activeColorMode === 'species') {
-          const sp = SPECIES_CATALOG[tree.botanicalName];
-          fillColor = sp ? sp.color : '#10b981';
-        } else if (activeColorMode === 'family') {
-          const famColors: Record<string, string> = {
-            Meliaceae: '#10b981',
-            Fabaceae: '#f59e0b',
-            Moraceae: '#059669',
-            Annonaceae: '#84cc16',
-            Malvaceae: '#eab308',
-            Myrtaceae: '#6366f1',
-            Bignoniaceae: '#a855f7',
-            Arecaceae: '#14b8a6',
-            Apocynaceae: '#06b6d4',
-            Anacardiaceae: '#ca8a04'
-          };
-          fillColor = famColors[tree.family] || '#94a3b8';
-        } else if (activeColorMode === 'dbh') {
-          if (tree.dbhCm < 25) fillColor = '#a7f3d0';
-          else if (tree.dbhCm < 45) fillColor = '#34d399';
-          else if (tree.dbhCm < 75) fillColor = '#059669';
-          else fillColor = '#064e3b';
+        switch (tree.health) {
+          case 'Healthy': fillColor = '#10b981'; break;
+          case 'Good': fillColor = '#3b82f6'; break;
+          case 'Fair': fillColor = '#eab308'; break;
+          case 'Stressed': fillColor = '#f97316'; break;
+          case 'Diseased': fillColor = '#ef4444'; break;
+          case 'Pruned': fillColor = '#a855f7'; break;
+          case 'Critical': fillColor = '#dc2626'; break;
+          default: fillColor = '#10b981';
         }
 
         const styles: Style[] = [];
@@ -298,10 +269,10 @@ export const TreeMap: React.FC<TreeMapProps> = ({
     treeSourceRef.current.addFeatures(treeFeatures);
   }, [trees]);
 
-  // Redraw when color mode or selected tree changes
+  // Redraw when selected tree changes
   useEffect(() => {
     treeSourceRef.current?.changed();
-  }, [activeColorMode, selectedTree]);
+  }, [selectedTree]);
 
   // Fly to selected tree
   useEffect(() => {
@@ -331,33 +302,15 @@ export const TreeMap: React.FC<TreeMapProps> = ({
       <div ref={mapContainerRef} className="w-full h-full cursor-grab active:cursor-grabbing" />
 
       {/* Top Map Toolbar */}
-      <div className="absolute top-4 left-16 z-20 flex items-center gap-2 bg-slate-900/90 backdrop-blur-md px-3 py-2 rounded-xl border border-slate-700/70 shadow-2xl">
-        <div className="flex items-center gap-1 border-r border-slate-700/60 pr-2">
-          <button
-            onClick={handleResetCampusView}
-            title="Reset to TI Cycles Ambattur Campus Extent"
-            className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 text-xs font-semibold transition"
-          >
-            <Compass className="w-3.5 h-3.5" />
-            <span>Campus Extent</span>
-          </button>
-        </div>
-
-        {/* Color Mode Switcher */}
-        <div className="flex items-center gap-1.5 text-xs text-slate-300">
-          <Palette className="w-3.5 h-3.5 text-slate-400" />
-          <span className="text-slate-400 hidden sm:inline">Color by:</span>
-          <select
-            value={activeColorMode}
-            onChange={(e) => onChangeColorMode(e.target.value as MapColorMode)}
-            className="bg-slate-800 text-slate-200 border border-slate-700 rounded-md px-2 py-1 text-xs focus:outline-none focus:border-emerald-500"
-          >
-            <option value="health">Tree Health Condition</option>
-            <option value="species">Botanical Species</option>
-            <option value="family">Taxonomic Family</option>
-            <option value="dbh">DBH Girth Class (cm)</option>
-          </select>
-        </div>
+      <div className="absolute top-4 left-16 z-20 flex items-center bg-slate-900/90 backdrop-blur-md p-1.5 rounded-xl border border-slate-700/70 shadow-2xl">
+        <button
+          onClick={handleResetCampusView}
+          title="Reset to TI Cycles Ambattur Campus Extent"
+          className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 text-xs font-semibold transition"
+        >
+          <Compass className="w-3.5 h-3.5" />
+          <span>Campus Extent</span>
+        </button>
       </div>
 
       {/* Coordinate & GIS Status Bar (Bottom-Left) */}

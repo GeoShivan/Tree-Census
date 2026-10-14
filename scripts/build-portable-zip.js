@@ -40,7 +40,7 @@ color 0A
 echo ===============================================================================
 echo     TI CYCLES OF INDIA - AMBATTUR CAMPUS TREE CENSUS GIS
 echo     Tube Investments of India Ltd. / Murugappa Group
-echo     Census Survey 2024-2025 (911 Surveyed Trees)
+echo     Census Survey 2026 (911 Surveyed Trees)
 echo ===============================================================================
 echo.
 echo Launching Full Interactive Tree Census Webmap GIS with All Panels...
@@ -128,7 +128,7 @@ while ($listener.IsListening) {
   const readmeContent = `===============================================================================
 TI CYCLES OF INDIA - AMBATTUR CAMPUS TREE CENSUS GIS
 Portable Windows Package with Full Interactive GIS & All Panels
-Client Delivery Version 2.0 (Census Survey 2024-2025)
+Client Delivery Version 2.0 (Census Survey 2026)
 ===============================================================================
 
 Tube Investments of India Limited (Murugappa Group)
