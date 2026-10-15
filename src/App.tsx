@@ -128,13 +128,8 @@ export default function App() {
               <TreePine className="w-5 h-5" />
             </div>
             <div>
-              <div className="flex items-center gap-2">
-                <span className="font-extrabold text-sm sm:text-base text-white tracking-tight">
-                  TI Cycles of India
-                </span>
-                <span className="hidden sm:inline-block text-[10px] font-bold uppercase tracking-wider bg-emerald-500/20 text-emerald-400 px-2 py-0.5 rounded border border-emerald-500/30">
-                  Ambattur Campus GIS
-                </span>
+              <div className="font-extrabold text-sm sm:text-base text-white tracking-tight">
+                TI Cycles of India
               </div>
               <div className="text-[11px] text-slate-400 hidden sm:block">
                 Tube Investments of India • Campus Tree Census (911 Trees Geotagged)

@@ -136,24 +136,8 @@ export const FilterPanel: React.FC<FilterPanelProps> = ({
 
   return (
     <aside className="w-80 sm:w-96 h-full flex flex-col bg-slate-900 border-r border-slate-800 shrink-0 z-30 select-none shadow-2xl">
-      {/* Brand Header */}
-      <div className="p-4 border-b border-slate-800 bg-slate-950/80">
-        <div className="flex items-center justify-between mb-2">
-          <div className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-lg bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center text-emerald-400">
-              <TreePine className="w-5 h-5" />
-            </div>
-            <div>
-              <div className="text-xs uppercase tracking-widest font-extrabold text-emerald-400">
-                TI Cycles of India
-              </div>
-              <h1 className="text-base font-bold text-white tracking-tight leading-none">
-                Ambattur Tree Census GIS
-              </h1>
-            </div>
-          </div>
-        </div>
-
+      {/* Census Active Status */}
+      <div className="p-3 border-b border-slate-800 bg-slate-950/80">
         <div className="flex items-center justify-between text-xs text-slate-400 bg-slate-900/90 rounded-lg p-2 border border-slate-800">
           <div className="flex items-center gap-1.5">
             <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
