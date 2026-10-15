@@ -1,6 +1,6 @@
 {
-  "name": "TI Cycles Ambattur Tree Census GIS",
-  "description": "Interactive Webmap GIS and Tree Census application for the TI Cycles Ambattur campus with satellite imagery, spatial filters, dendrometric analytics, and executive reporting for 911 surveyed trees.",
+  "name": "Tree Census GIS",
+  "description": "Interactive Webmap GIS and Tree Census application with satellite imagery, spatial filters, dendrometric analytics, and executive reporting for 911 surveyed trees.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

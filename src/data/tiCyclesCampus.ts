@@ -9,15 +9,15 @@ import {
   getTreesGeoJSON
 } from './sourceData';
 
-const TIDC_BOUNDARY_GEOJSON = CAMPUS_BOUNDARY_GEOJSON;
+const CAMPUS_BOUNDARY_GEOJSON_DATA = CAMPUS_BOUNDARY_GEOJSON;
 const RAW_TREES_GEOJSON = TREES_GEOJSON;
 
 export const CAMPUS_CENTER = LOADER_CENTER;
 export const DEFAULT_ZOOM = LOADER_ZOOM;
 
-// Campus Boundary Coordinates extracted from SourceFile/TIDC_Boundary.geojson
+// Campus Boundary Coordinates
 export const CAMPUS_BOUNDARY_COORDINATES: [number, number][] =
-  (TIDC_BOUNDARY_GEOJSON.features?.[0]?.geometry?.coordinates?.[0] as unknown as [number, number][]) || [
+  (CAMPUS_BOUNDARY_GEOJSON_DATA.features?.[0]?.geometry?.coordinates?.[0] as unknown as [number, number][]) || [
     [80.15587, 13.10610],
     [80.15768, 13.10608],
     [80.15885, 13.10605],
@@ -43,7 +43,7 @@ export const CAMPUS_BOUNDARY_COORDINATES: [number, number][] =
     [80.15587, 13.10610]
   ];
 
-// Sector zones within the TIDC / TI Cycles compound
+// Sector zones within the campus compound
 export const CAMPUS_ZONES: CampusZone[] = [
   {
     id: 'zone-north-gateway',
@@ -123,7 +123,7 @@ export const INITIAL_TREES: TreeRecord[] = SOURCE_TREES;
 export function treesToGeoJSON(trees: TreeRecord[]) {
   return {
     type: 'FeatureCollection',
-    name: 'TI_Cycles_Ambattur_Tree_Census',
+    name: 'Campus_Tree_Census',
     crs: {
       type: 'name',
       properties: { name: 'urn:ogc:def:crs:OGC:1.3:CRS84' }
@@ -163,4 +163,4 @@ export function treesToGeoJSON(trees: TreeRecord[]) {
   };
 }
 
-export { RAW_TREES_GEOJSON, TIDC_BOUNDARY_GEOJSON, getCampusBoundaryGeoJSON, getTreesGeoJSON };
+export { RAW_TREES_GEOJSON, CAMPUS_BOUNDARY_GEOJSON_DATA, getCampusBoundaryGeoJSON, getTreesGeoJSON };

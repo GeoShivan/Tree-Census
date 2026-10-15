@@ -140,7 +140,7 @@ export const StatisticsModal: React.FC<StatisticsModalProps> = ({
             </div>
             <div>
               <div className="text-xs font-bold uppercase tracking-wider text-emerald-400">
-                TI Cycles of India • Ambattur Campus
+                Campus Tree Inventory
               </div>
               <h2 className="text-lg font-bold text-white tracking-tight">
                 Tree Census GIS Analytics & Ecological Dashboard
@@ -434,7 +434,7 @@ export const StatisticsModal: React.FC<StatisticsModalProps> = ({
 
         {/* Footer */}
         <div className="p-3 sm:p-4 border-t border-slate-800 bg-slate-950 flex items-center justify-between text-xs text-slate-400">
-          <span>Census Dataset: TI Cycles Ambattur GIS Initiative (2026)</span>
+          <span>Census Dataset: Tree Census GIS Initiative (2026)</span>
           <button
             onClick={onClose}
             className="px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 font-semibold transition"

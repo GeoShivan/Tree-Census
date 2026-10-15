@@ -212,8 +212,8 @@ rawTrees.features.forEach((feature, index) => {
   }
 
   const rawTreeNum = props['Tree Number'] ?? (index + 1);
-  const id = `TIC-${String(rawTreeNum).padStart(3, '0')}`;
-  const tagNumber = `TIDC-AMB-${String(rawTreeNum).padStart(4, '0')}`;
+  const id = `TREE-${String(rawTreeNum).padStart(3, '0')}`;
+  const tagNumber = `TREE-TAG-${String(rawTreeNum).padStart(4, '0')}`;
 
   const rawFamily = (props['Family'] || 'Unknown').trim();
   const rawBinomial = (props['Binomial'] || '').trim();
@@ -298,7 +298,7 @@ rawTrees.features.forEach((feature, index) => {
     trunkCondition,
     recommendedAction,
     surveyDate: '2026-03-15',
-    surveyor: 'TI Cycles GIS Survey Team',
+    surveyor: 'GIS Survey Team',
     gpsAccuracyM: 0.5,
     notes: `Easting: ${coords[0]}, Northing: ${coords[1]} (UTM 44N)`
   };
@@ -322,12 +322,12 @@ rawTrees.features.forEach((feature, index) => {
 
 const treesGeoJSON = {
   type: 'FeatureCollection',
-  name: 'TI_Cycles_Ambattur_Trees',
+  name: 'Campus_Trees_Census',
   crs: { type: 'name', properties: { name: 'urn:ogc:def:crs:OGC:1.3:CRS84' } },
   features: geoJSONFeatures
 };
 
-const outputTs = `// AUTO-GENERATED FROM /SourceFile/TreesPoint.geojson AND /SourceFile/TIDC_Boundary.geojson
+const outputTs = `// AUTO-GENERATED TREE CENSUS DATASET
 import { TreeRecord } from '../types/tree';
 
 export const CAMPUS_CENTER: [number, number] = [80.15812, 13.10439];

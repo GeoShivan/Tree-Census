@@ -7,8 +7,8 @@ export type FoliageDensity = 'Dense' | 'Moderate' | 'Sparse';
 export type TrunkCondition = 'Sound' | 'Minor Cavity' | 'Termite Activity' | 'Surface Wound' | 'Girdling Root';
 
 export interface TreeRecord {
-  id: string; // e.g. "TIC-001"
-  tagNumber: string; // e.g. "TI-TREE-2026-001"
+  id: string; // e.g. "TREE-001"
+  tagNumber: string; // e.g. "TREE-TAG-0001"
   commonName: string; // e.g. "Neem / Margosa"
   tamilName: string; // e.g. "வேப்ப மரம்"
   botanicalName: string; // e.g. "Azadirachta indica"

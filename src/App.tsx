@@ -10,6 +10,7 @@ import {
   TreePine,
   BarChart3,
   Printer,
+  Download,
   Menu,
   X
 } from 'lucide-react';
@@ -129,10 +130,7 @@ export default function App() {
             </div>
             <div>
               <div className="font-extrabold text-sm sm:text-base text-white tracking-tight">
-                TI Cycles of India
-              </div>
-              <div className="text-[11px] text-slate-400 hidden sm:block">
-                Tube Investments of India • Campus Tree Census (911 Trees Geotagged)
+                Tree Census GIS Dashboard
               </div>
             </div>
           </div>
@@ -155,6 +153,16 @@ export default function App() {
             <Printer className="w-3.5 h-3.5 text-purple-400" />
             <span className="hidden md:inline">Report</span>
           </button>
+
+          <a
+            href="./hostinger_ready_build.zip"
+            download="hostinger_ready_build.zip"
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white border border-emerald-500 text-xs font-bold shadow-sm transition"
+            title="Download Hostinger deployment package (.zip)"
+          >
+            <Download className="w-3.5 h-3.5" />
+            <span>Download ZIP</span>
+          </a>
         </div>
       </header>
 

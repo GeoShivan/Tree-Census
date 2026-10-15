@@ -73,10 +73,10 @@ export const PrintReportModal: React.FC<PrintReportModalProps> = ({
           <div className="border-b-2 border-slate-900 pb-5 flex items-start justify-between">
             <div>
               <div className="text-[11px] uppercase tracking-widest font-black text-emerald-700">
-                TUBE INVESTMENTS OF INDIA LIMITED • MURUGAPPA GROUP
+                CAMPUS ARBORICULTURAL & SUSTAINABILITY INITIATIVE
               </div>
               <h1 className="text-2xl font-black text-slate-950 tracking-tight mt-1">
-                TI Cycles Ambattur Campus Tree Census
+                Campus Tree Census & GIS Inventory
               </h1>
               <div className="text-xs text-slate-600 mt-0.5">
                 Comprehensive GIS Inventory, Dendrometric Survey & Species Directory
@@ -84,7 +84,7 @@ export const PrintReportModal: React.FC<PrintReportModalProps> = ({
             </div>
 
             <div className="text-right text-xs text-slate-600 font-mono">
-              <div className="font-bold text-slate-900">REF: TIC-AMB-ENV-2026</div>
+              <div className="font-bold text-slate-900">REF: TREE-ENV-2026</div>
               <div>Date: March 2026</div>
               <div>Campus Area: 27.6 Hectares</div>
             </div>
@@ -96,7 +96,7 @@ export const PrintReportModal: React.FC<PrintReportModalProps> = ({
               1. Executive Summary & Stand Characteristics
             </h3>
             <p className="text-xs text-slate-700 leading-relaxed">
-              A comprehensive tree census and geospatial mapping initiative was executed across the entire TI Cycles manufacturing, testing track, and corporate premises located on MTH Road, Ambattur Industrial Estate, Chennai. Each tree has been geolocated with sub-meter GNSS accuracy, tagged with physical anodized barcode plates, and evaluated for arboricultural vigor, dendrometric metrics, and crown coverage.
+              A comprehensive tree census and geospatial mapping initiative was executed across the campus perimeter, green belts, and grounds. Each tree has been geolocated with sub-meter GNSS accuracy, tagged with physical anodized barcode plates, and evaluated for arboricultural vigor, dendrometric metrics, and crown coverage.
             </p>
           </div>
 
@@ -174,8 +174,8 @@ export const PrintReportModal: React.FC<PrintReportModalProps> = ({
                 <div>Consulting Urban Ecologist</div>
               </div>
               <div className="text-right">
-                <div className="font-bold text-slate-900">TI Cycles Sustainability Team</div>
-                <div>Tube Investments of India Limited</div>
+                <div className="font-bold text-slate-900">Sustainability & GIS Survey Team</div>
+                <div>Campus Environmental Operations</div>
               </div>
             </div>
           </div>
